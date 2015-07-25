@@ -1,0 +1,3 @@
+Assortment of random CPP utilities I find useful. For the most part each
+library is header-only and isolated from the rest. A few may have external
+dependencies.

@@ -35,6 +35,6 @@ inline ScopeGuard<Func> MakeScopeGuard(Func f) {
 #define CONCATENATE_REAL(x, y) x ## y
 #define CONCATENATE_EXPAND(x, y) CONCATENATE_REAL(x, y)
 #define SCOPE_GUARD(c) \
-  auto CONCATENATE_EXPAND(scope_guard_, __LINE__) = lib::scope::MakeScopeGuard([=](){c;});
+  auto CONCATENATE_EXPAND(scope_guard_, __LINE__) = lib::scope::MakeScopeGuard([&](){c;});
 
 #endif

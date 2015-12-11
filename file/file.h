@@ -14,6 +14,22 @@ std::FILE* FopenOrDie(const char* filename, const char* mode);
 
 std::string ReadFile(const std::string& input_file);
 
+DIR* OpenDirOrDie(const string& dirpath);
+
+// Pass a callable that takes as its argument a struct dirent*
+template <class Func>
+void VisitDirEntries(DIR* dir_handle, Func f) {
+  auto* dir_entry = readdir(dir_handle);
+  while (dir_entry != nullptr) {
+    f(dir_entry);
+    dir_entry = readdir(dir_handle);
+  }
+}
+
+std::string GetCurrentHomeDir();
+
+std::string RealPath(const std::string& path);
+
 }  // namespace file
 }  // namespace lib
 

@@ -7,6 +7,7 @@
 #include <fstream>
 #include <dirent.h>
 #include <pwd.h>
+#include <unistd.h>
 
 using ::std::string;
 

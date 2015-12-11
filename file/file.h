@@ -3,6 +3,7 @@
 #define LIB_FILE_H_
 
 #include <string>
+#include <dirent.h>
 
 /**
  * Simple utility functions for dealing with files
@@ -14,7 +15,7 @@ std::FILE* FopenOrDie(const char* filename, const char* mode);
 
 std::string ReadFile(const std::string& input_file);
 
-DIR* OpenDirOrDie(const string& dirpath);
+DIR* OpenDirOrDie(const std::string& dirpath);
 
 // Pass a callable that takes as its argument a struct dirent*
 template <class Func>
